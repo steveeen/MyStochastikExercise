@@ -17,14 +17,13 @@ public class RoundCalculator {
   
     public static String CalculateWS(int goodVal,int possibleVal, JTextArea logthere){
                 LotteryDrawing test=new LotteryDrawing(8,3);
-                
+                //There are 3 possible Paths where no German Team play agains an other german team
+                //On all other paths 2 Team Play together
                 Deque<RoundValues> path1=new ArrayDeque <RoundValues>(3);
                 path1.addLast(RoundValues.NoGermanTeam);
                 path1.addLast(RoundValues.OneGermanTeam);
                 path1.addLast(RoundValues.OneGermanTeam);
-                
-                
-                
+                               
                 Deque<RoundValues> path2=new ArrayDeque <RoundValues>(3);
                 path2.addLast(RoundValues.OneGermanTeam);
                 path2.addLast(RoundValues.NoGermanTeam);
@@ -33,6 +32,7 @@ public class RoundCalculator {
                 Deque<RoundValues> path3=new ArrayDeque <RoundValues>(3);
                 path3.addLast(RoundValues.OneGermanTeam);
                 path3.addLast(RoundValues.OneGermanTeam);
+                
                 
                 // test.setSubRoundFor0Positives(new LotteryDrawing(6,4));
                 String logtext="";

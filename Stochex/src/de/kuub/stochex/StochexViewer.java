@@ -54,7 +54,7 @@ public class StochexViewer extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();	
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -171,7 +171,7 @@ public class StochexViewer extends javax.swing.JFrame {
             public void run() {
                 StochexViewer viewme= new StochexViewer();
                 viewme.setVisible(true);
-               viewme.jLabel8.setText(RoundCalculator.CalculateWS(8,3, viewme.jTextArea1));
+                viewme.jLabel8.setText(RoundCalculator.CalculateWS(8,3, viewme.jTextArea1));
                 
             }
         });

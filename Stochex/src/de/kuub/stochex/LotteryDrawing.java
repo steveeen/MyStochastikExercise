@@ -41,7 +41,6 @@ public class LotteryDrawing {
         if(myPath.size()==0){
            return 0;
         }
-        
         RoundValues val=myPath.removeFirst();
         System.out.println(val.toString());
         float sum=getPossibilityByRoundValue(val);
