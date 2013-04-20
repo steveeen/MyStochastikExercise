@@ -29,6 +29,9 @@
  */
 package de.kuub.stochex;
 
+import javax.swing.JTextArea;
+import javax.swing.text.JTextComponent;
+
 
 public class StochexViewer extends javax.swing.JFrame {
     
@@ -52,6 +55,8 @@ public class StochexViewer extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("E-mail Contacts");
@@ -68,6 +73,14 @@ public class StochexViewer extends javax.swing.JFrame {
 
         jLabel1.setText("Die Wahrscheinlichkeit beträgt:");
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(225, 223, 199));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -80,7 +93,8 @@ public class StochexViewer extends javax.swing.JFrame {
                     .add(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jLabel1)))
-                .addContainerGap(159, Short.MAX_VALUE))
+                .add(18, 18, 18)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -90,6 +104,7 @@ public class StochexViewer extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 51, Short.MAX_VALUE)
                 .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 208, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .add(jScrollPane1)
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -154,7 +169,10 @@ public class StochexViewer extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StochexViewer().setVisible(true);
+                StochexViewer viewme= new StochexViewer();
+                viewme.setVisible(true);
+               viewme.jLabel8.setText(RoundCalculator.CalculateWS(8,3, viewme.jTextArea1));
+                
             }
         });
     }
@@ -165,6 +183,8 @@ public class StochexViewer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
     
 }
