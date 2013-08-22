@@ -8,7 +8,7 @@ package de.kuub.stochex;
  *
  * @author Bonke
  */
-public enum RoundValues
+enum RoundValues
 {
     NoGermanTeam,
     OneGermanTeam,

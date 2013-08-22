@@ -29,13 +29,14 @@
  */
 package de.kuub.stochex;
 
-import javax.swing.JTextArea;
-import javax.swing.text.JTextComponent;
 
-
-public class StochexViewer extends javax.swing.JFrame {
+class StochexViewer extends javax.swing.JFrame {
     
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4754531213291543939L;
+	/**
      * Creates new form StochexViewer
      */
     public StochexViewer() {
@@ -50,7 +51,7 @@ public class StochexViewer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        new javax.swing.ButtonGroup();
         jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -177,8 +178,6 @@ public class StochexViewer extends javax.swing.JFrame {
         });
     }
     
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;

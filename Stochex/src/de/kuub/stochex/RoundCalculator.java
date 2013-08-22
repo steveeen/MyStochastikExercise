@@ -12,9 +12,9 @@ import javax.swing.JTextArea;
  *
  * @author Bonke
  */
-public class RoundCalculator {
+class RoundCalculator {
   
-    public static String CalculateWS(int goodVal,int possibleVal, JTextArea logthere){
+    static String CalculateWS(int goodVal,int possibleVal, JTextArea logthere){
                 LotteryDrawing test=new LotteryDrawing(8,3);
                 //There are 3 possible Paths where no German Team play agains an other german team
                 //On all other paths 2 Team Play together

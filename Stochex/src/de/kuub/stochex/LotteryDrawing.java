@@ -11,16 +11,13 @@ import java.util.*;
  *
  * @author Bonke
  */
-public class LotteryDrawing {
+class LotteryDrawing {
 
     private float advantageousValue;
     private float possibleValueGood;
     private float possibleValueBad;
-    private LotteryDrawing parentRound = null;
     private HashMap<RoundValues, LotteryDrawing> subrounds = new HashMap<>(3);
-    private float probalitityTillHere;
-
-    public LotteryDrawing(int advValue, int gdValue) {
+    LotteryDrawing(int advValue, int gdValue) {
         advantageousValue = (float) advValue;
         possibleValueGood = (float) gdValue;
         possibleValueBad = (float) (advValue - gdValue);
@@ -37,7 +34,8 @@ public class LotteryDrawing {
             }
         }
     }
-    public float calculatePath(Deque<RoundValues> myPath){
+    
+    float calculatePath(Deque<RoundValues> myPath){
         if(myPath.size()==0){
            return 0;
         }
@@ -53,7 +51,7 @@ public class LotteryDrawing {
     }
      
     
-    public float getPossibilityByRoundValue(RoundValues val){
+    private float getPossibilityByRoundValue(RoundValues val){
        float prop=0f;
         switch(val){
             case NoGermanTeam:
@@ -121,6 +119,7 @@ public class LotteryDrawing {
         return (int) possibleValueGood;
     }
 
+    @SuppressWarnings("ucd")
     public String ToString() {
         return String.format("AdvantagousValue: %s \r\npossibleGoodValue: %s \r\npossibleBadValue: %s\r\n", advantageousValue, possibleValueGood, possibleValueBad);
     }
@@ -149,7 +148,7 @@ public class LotteryDrawing {
         return 1 / ((advantageousValue - 1) / (possibleValueGood - 1));
     }
 
-    public static String GetFloatAsPercent(float Val) {
+    static String GetFloatAsPercent(float Val) {
         return MessageFormat.format("{0,number,#.##%}", Val);
     }
 }
